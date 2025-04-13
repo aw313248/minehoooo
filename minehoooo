@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>芊絨 & 詩芹：來自未來的我們 ✉️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: url('https://images.unsplash.com/photo-1576502200916-3808e07386a5?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #3a2e2e;
+      text-align: center;
+      backdrop-filter: brightness(93%) blur(1.5px);
+    }
+    header {
+      background-color: rgba(242, 232, 220, 0.85);
+      padding: 1rem;
+      border-bottom: 4px solid #c13b3a;
+    }
+    h1 {
+      color: #1d3c65;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .card-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .card {
+      border: 2px solid #1d3c65;
+      border-radius: 1rem;
+      padding: 1.8rem;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.06);
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+    audio {
+      margin: 1rem auto;
+      display: block;
+    }
+    .clock {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>芊絨 & 詩芹：來自未來的我們 ✉️</h1>
+  </header>
+
+  <img src="插圖圖片連結.png" alt="可愛三人插圖">
+  <audio controls autoplay loop>
+    <source src="https://lofi.at-your-request/smooth.mp3" type="audio/mp3" />
+    您的瀏覽器不支援音樂播放。
+  </audio>
+
+  <div class="clock" id="timeDisplay"></div>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>你第一口吃到的不是飯，是冒險</h2>
+      <p>出國不是逃離，而是遇見自己。你正在往心裡那塊想過好生活的地方靠近。<br>
+      今天天氣晴朗，台灣的早晨有點濕熱、但早餐店的味道依然迷人。你離開的不只是家，而是這個總是能在巷口買到蘿蔔糕的地方。</p>
+      <p>我們想像你騎著機車穿過清邁的巷弄，也在想：今天你有笑嗎？今天你說中文了嗎？</p>
+      <p><em>Life is always better with courage and snacks.</em></p>
+      <p><strong>小提醒：</strong>你現在看到的天空，和我們的是不一樣的，但我們看到你的方式是一樣的：很想你、也很為你開心。別忘了台灣的便利商店24小時亮著，和我們的訊息一樣。</p>
+    </div>
+    <div class="card">
+      <h2>某一天你突然想吃鹹酥雞</h2>
+      <p>那不代表你想家，是代表你記得我們。那口香氣，曾經在週五夜裡把你從壓力裡解救出來。<br>
+      清邁現在或許正下一場午後雷陣雨，但你知道台灣的雨總是來得急又走得快。你的日常也許變了，但有沒有新的朋友一起淋雨、一起笑？</p>
+      <p>還有，有沒有交男朋友？（快說）我們都等著八卦。</p>
+      <p><em>Missing home just means your roots are strong.</em></p>
+      <p><strong>小提醒：</strong>記得拍下你覺得可愛的樹、路邊的小動物、或是讓你覺得想家的聲音——那些畫面我們會想看，真的。</p>
+    </div>
+    <div class="card">
+      <h2>走過的人生都會留下光</h2>
+      <p>這一年你改變了，變得更加柔軟也更有力量。清邁的夕陽像橘紅色的祝福，每天都在為你打氣。<br>
+      台灣的夜色已深，夜市還亮著燈，我們邊逛邊聊也會提起你。有空記得回來吃麻辣臭豆腐。</p>
+      <p>我們一直都在好奇：你現在走路的樣子，有沒有變得更自在？你的笑，是不是也多了一點泰國的風味？</p>
+      <p><em>You are not alone — you are just early.</em></p>
+      <p><strong>小提醒：</strong>記得存錢、記得曬太陽、記得愛自己。還有，記得我們永遠都在——像誠品、像捷運、像公館的那杯半糖拿鐵。</p>
+    </div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const tw = new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei", hour12: false });
+      const cm = new Date().toLocaleString("zh-TW", { timeZone: "Asia/Bangkok", hour12: false });
+      document.getElementById("timeDisplay").innerText = `台灣時間：${tw} | 清邁時間：${cm}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
