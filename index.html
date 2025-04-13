@@ -73,10 +73,18 @@
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-    </style>
+    
+.card {
+  animation: fade-in-up 1s ease both;
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 <body>
-<h1 style="color: #aa5555;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
+<h1 style="color: #d86fa0;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
 <div class="audio-box">
 <p>🌊 背景音樂：放鬆的海浪聲（若未自動播放，請點播放）<br/></p>
 <audio autoplay="" controls="" id="bg-audio" loop="" preload="auto">
@@ -93,7 +101,7 @@
 好想知道你是不是一邊過海關一邊想著「我真的要來這裡一年嗎？」（笑）🤯
 
 我們那時候還賭你第一天會不會直接爆買零食🛍️，快回報啊老師小姐！
-<br/></p>
+</p>
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l1">🎵 正在聽芊絨說話中...</div>
@@ -116,7 +124,7 @@
 我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」？🤷‍♀️💬
 
 還有還有，該不會交了男朋友沒說吧？😏💘 有帥的同事請分享，感謝。
-<br/></p>
+</p>
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
@@ -138,7 +146,7 @@
 
 好想像你要回來那天，我們提著珍奶去接機等你～🛬🧋 到時候要拍一百張合照喔！
 
-  <br/></p>
+  </p>
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
@@ -174,5 +182,3 @@ document.addEventListener('click', function(e) {
 <footer style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9em;">
   本頁由 明宏Oscar 製作 ❤️
 </footer>
-
-
