@@ -227,6 +227,31 @@
       }
     }
     </style>
+<style>
+.locked-card {
+  background-color: rgba(255, 245, 247, 0.8);
+  border: 2px dashed #f9a;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: #e05c7b;
+  cursor: pointer;
+  position: relative;
+}
+.locked-card:hover {
+  background-color: #fff5f9;
+}
+.locked-card .emoji {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 10px;
+}
+.locked-card .countdown {
+  font-size: 0.9em;
+  color: #c55;
+  margin-top: 10px;
+}
+</style>
 </head>
 <body>
 <audio autoplay="" loop="" preload="auto" style="display:none;">
@@ -255,44 +280,47 @@
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l2">🎵 正在聽詩芹說話中...</div>
 </div>
+<div style="margin-top: 15px; font-size: 0.95em; color: #ddd;">
+                    🎤 芊絨 的留言：
+                    
+</div>
+<div style="margin-top: 15px; font-size: 0.95em; color: #ddd;">
+                    🎤 詩芹 的留言：
+                    
+</div>
+
+<div style="margin-top: 15px; font-size: 0.95em; color: #555;">
+                    🎤 芊絨 的留言：
+                    <audio controls="" preload="auto" style="width: 100%; margin-top: 5px;">
+<source src="normalized_april_qianrong.mp3" type="audio/mpeg"/>
+                      您的瀏覽器不支援播放語音。
+                    </audio>
+</div>
+
+<div style="margin-top: 15px; font-size: 0.95em; color: #555;">
+                    🎤 詩芹 的留言：
+                    <audio controls="" preload="auto" style="width: 100%; margin-top: 5px;">
+<source src="normalized_april_shiqin.mp3" type="audio/mpeg"/>
+                      您的瀏覽器不支援播放語音。
+                    </audio>
+</div>
 </div>
 <div class="card">
-<img alt="八月仲夏插畫" class="bottom-img" onclick="showLightbox(this.src)" src="eight_months_tea.png"/>
-<h2>🫖 八月仲夏：生活穩定了嗎？</h2>
-<p>
-聽說你開始教書了！👩‍🏫 是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）😤  
-我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」🤷‍♀️
-
-我們知道你這半年一定有很多時候是自己扛著，但你要知道你並不是一個人。  
-你的辛苦，我們可能沒辦法實際幫到什麼，但我們在台灣，每一次想起你，就會為你多加油一點。  
-還有還有，該不會交了男朋友沒說吧？😏💘 有帥的同事請分享，感謝。  
-（但我們也知道你最甜的地方，是那個永遠放在心裡的善良。）
-</p>
-<div class="audio-box">
-<div class="speaker">🎙️ 芊絨</div>
-<div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
-<div class="speaker">🎙️ 詩芹</div>
-<div class="listening" id="l4">🎵 正在聽詩芹說話中...</div>
+<div class="locked-card" onclick="alert('你想我喔 💌')">
+<span class="emoji">🔒</span>
+<strong>這段內容還沒開放喔～</strong><br/>
+              等 2025/10/10 再來偷看吧！<br/>
+<div class="countdown">⏳ 還有 179 天解鎖！</div>
 </div>
 </div>
 <div class="card" style="background-color: #f2f2f2;">
-<h2>🌅 三月歸期：倒數的風景</h2>
-<p>
-    我們一直在想像你快要回台灣的那種心情。是不是一邊期待回來和我們吃麻辣鍋，一邊又有點捨不得那邊的日常？<br/><br/>
-    那邊的超商、有點髒但很可愛的巷弄小吃、還有那幾個你曾經對他們笑過的小孩，應該都偷偷記得你了吧。<br/><br/>
-    我們真的很期待你回來那天可以什麼都不講，直接約我們一起去夜市邊走邊聊。🧋🎒<br/><br/>
-    不管你這一年有多瘋狂、有多累、有多豐富，我們都想聽你一口氣說完。<br/>
-    還有，你應該現在正要改作業吧（笑），果然老師就是老師～<br/><br/>
-    然後⋯有男友還偷偷愛看歐美帥哥的部分我們會記著的😉<br/>
-    台灣永遠等你回來，我們永遠等你。🌟
-    </p>
-<div class="audio-box">
-<div class="speaker">🎙️ 芊絨</div>
-<div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
-<div class="speaker">🎙️ 詩芹</div>
-<div class="listening" id="l6">🎵 正在聽詩芹說話中...</div>
+<div class="locked-card" onclick="alert('你想我喔 💌')">
+<span class="emoji">🔒</span>
+<strong>這段內容還沒開放喔～</strong><br/>
+              等 2026/03/05 再來偷看吧！<br/>
+<div class="countdown">⏳ 還有 325 天解鎖！</div>
 </div>
-<img src="march_final_art.png" style="max-width: 100%; border-radius: 12px; margin-top: 20px;"/></div>
+</div>
 <script>
 function showListening(id) {
   document.querySelectorAll('.listening').forEach(el => el.style.display = 'none');
@@ -342,22 +370,7 @@ document.querySelectorAll("audio").forEach(audio => {
     setTimeout(() => boba.classList.remove("boba-shake"), 600);
   });
 });
-</script><audio autoplay="autoplay" controls="controls" id="bg-audio" loop="loop" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-    Your browser does not support the audio element.
-  </audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l1')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l2')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l3')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l4')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l5')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio><audio autoplay="autoplay" controls="controls" loop="loop" onplay="showListening('l6')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2bfe3d8d44.mp3?filename=calm-ocean-waves-ambient-110397.mp3" type="audio/mpeg"/>
-</audio></div></body>
+</script></div></body>
 </html>
 <footer style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9em;">
   本頁由 明宏Oscar 製作 ❤️
