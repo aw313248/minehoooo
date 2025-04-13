@@ -1,305 +1,41 @@
 
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>芊絨 &amp; 詩芹：來自未來的我們 ✉️</title>
-<style>
+  <meta charset="UTF-8" />
+  <title>給芊絨與詩芹的一封信</title>
+  <style>
     body {
-  text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       font-family: 'Noto Sans TC', sans-serif;
-      background: #fff5ec;
-      color: #333;
-      padding: 20px;
-      position: relative;
-      overflow-x: hidden;
     }
-    .card {
-      background-size: cover;
-      background-position: center;
-      border-radius: 18px;
-      padding: 30px;
-      margin: 40px 0;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      background-repeat: no-repeat;
-      background-blend-mode: lighten;
-      backdrop-filter: brightness(90%) blur(1px);
+    .envelope {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      max-width: 80%;
+      height: auto;
     }
-    h2 {
-      background: rgba(255,255,255,0.7);
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 12px;
+    .envelope:hover {
+      transform: scale(1.03);
     }
-    p {
-      background: rgba(255,255,255,0.6);
-      padding: 12px;
-      border-radius: 12px;
-      line-height: 1.8;
-      white-space: pre-line;
-    }
-    .flag-float {
+    .hint {
       position: absolute;
-      font-size: 24px;
-      animation: float-up 2s ease-out forwards;
-      pointer-events: none;
+      bottom: 40px;
+      font-size: 1em;
+      color: #888;
     }
-    @keyframes float-up {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-100px); opacity: 0; }
-    }
-    .audio-box {
-      margin-bottom: 20px;
-    }
-    .speaker {
-  text-align: center;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .listening {
-  text-align: center;
-      font-size: 0.9em;
-      color: #d06;
-      font-style: italic;
-      margin-top: 4px;
-      display: none;
-    }
-  
-    .bottom-img {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    
-.card {
-  animation: fade-in-up 1s ease both;
-}
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.bottom-img {
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.bottom-img:hover {
-  transform: scale(1.05);
-}
-
-/* 漂浮珍奶背景 */
-.bubbletea {
-  position: fixed;
-  width: 60px;
-  bottom: 20px;
-  left: 10px;
-  z-index: -1;
-  animation: float-boba 6s ease-in-out infinite;
-  opacity: 0.6;
-}
-@keyframes float-boba {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes shake-boba {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
-}
-.boba-shake {
-  animation: shake-boba 0.6s ease;
-}
-
-.sakura {
-  position: fixed;
-  width: 50px;
-  bottom: 20px;
-  left: 10px;
-  z-index: -1;
-  animation: float-petal 4s ease-in-out infinite alternate;
-  opacity: 0.7;
-}
-@keyframes float-petal {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(30px, -20px) rotate(15deg); }
-  100% { transform: translate(-10px, 10px) rotate(-15deg); }
-}
-
-.sakura {
-  position: fixed;
-  width: 50px;
-  top: 40%;
-  left: 20%;
-  opacity: 0.6;
-  z-index: -1;
-  animation: glide-petal 12s ease-in-out infinite alternate;
-}
-@keyframes glide-petal {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  25%  { transform: translate(30px, 20px) rotate(5deg); }
-  50%  { transform: translate(60px, 40px) rotate(-3deg); }
-  75%  { transform: translate(90px, 60px) rotate(7deg); }
-  100% { transform: translate(120px, 80px) rotate(-5deg); }
-}
-
-.sakura {
-  position: fixed;
-  width: 50px;
-  top: 40%;
-  left: 20%;
-  z-index: -1;
-  animation: glide-petal-fast 6s ease-in-out infinite alternate;
-}
-@keyframes glide-petal-fast {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  25%  { transform: translate(30px, 20px) rotate(5deg); }
-  50%  { transform: translate(60px, 40px) rotate(-3deg); }
-  75%  { transform: translate(90px, 60px) rotate(7deg); }
-  100% { transform: translate(120px, 80px) rotate(-5deg); }
-}
-</style>
+  </style>
 </head>
 <body>
-<img class="sakura" src="https://cdn-icons-png.flaticon.com/512/7820/7820290.png" style="opacity: 0.2;"/><h1 style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Taiwan.svg/2560px-Flag_of_Taiwan.svg.png') no-repeat center center;background-size: cover;color: #ff2c91;padding: 20px;border-radius: 12px;opacity: 0.3;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
-<div class="audio-box">
-<p>🌊 背景音樂：放鬆的海浪聲（若未自動播放，請點播放）<br/></p>
-<audio autoplay="" controls="" id="bg-audio" loop="" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-    Your browser does not support the audio element.
-  </audio>
-</div>
-<div class="card">
-<img alt="四月出發插畫" class="bottom-img" onclick="showLightbox(this.src)" src="four_months.png"/>
-<h2>🧭 四月出發：這段新旅程的開始</h2>
-<p>
-第一天到曼谷的時候，我們就想著你一定在機場✈️緊張兮兮又很期待吧～  
-好想知道你是不是一邊過海關一邊想著「我真的要來這裡一年嗎？」（笑）🤯  
-我們那時候還賭你第一天會不會直接爆買零食🛍️，快回報啊老師小姐！
-
-其實你踏出那一步，我們真的超佩服的。很多人會猶豫、會怕變化，但你就是那種默默把事情做到好的人。  
-我們每次聊到你，都會笑著說「那孩子現在應該忙著幫學生改作業吧～」  
-也拜託你記得，如果哪天晚上忽然很想吃鹽酥雞，或只是想講幹話，我們永遠都在線上！📱
-</p>
-<div class="audio-box">
-<div class="speaker">🎙️ 芊絨</div>
-<div class="listening" id="l1">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l1')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-<div class="speaker">🎙️ 詩芹</div>
-<div class="listening" id="l2">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l2')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-</div>
-</div>
-<div class="card">
-<img alt="八月仲夏插畫" class="bottom-img" onclick="showLightbox(this.src)" src="eight_months_tea.png"/>
-<h2>🫖 八月仲夏：生活穩定了嗎？</h2>
-<p>
-聽說你開始教書了！👩‍🏫 是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）😤  
-我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」🤷‍♀️
-
-我們知道你這半年一定有很多時候是自己扛著，但你要知道你並不是一個人。  
-你的辛苦，我們可能沒辦法實際幫到什麼，但我們在台灣，每一次想起你，就會為你多加油一點。  
-還有還有，該不會交了男朋友沒說吧？😏💘 有帥的同事請分享，感謝。  
-（但我們也知道你最甜的地方，是那個永遠放在心裡的善良。）
-</p>
-<div class="audio-box">
-<div class="speaker">🎙️ 芊絨</div>
-<div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l3')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-<div class="speaker">🎙️ 詩芹</div>
-<div class="listening" id="l4">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l4')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-</div>
-</div>
-<div class="card" style="background-color: #f2f2f2;">
-<h2>🌅 三月歸期：倒數的風景</h2>
-<p>
-    我們一直在想像你快要回台灣的那種心情。是不是一邊期待回來和我們吃麻辣鍋，一邊又有點捨不得那邊的日常？<br/><br/>
-    那邊的超商、有點髒但很可愛的巷弄小吃、還有那幾個你曾經對他們笑過的小孩，應該都偷偷記得你了吧。<br/><br/>
-    我們真的很期待你回來那天可以什麼都不講，直接約我們一起去夜市邊走邊聊。🧋🎒<br/><br/>
-    不管你這一年有多瘋狂、有多累、有多豐富，我們都想聽你一口氣說完。<br/>
-    還有，你應該現在正要改作業吧（笑），果然老師就是老師～<br/><br/>
-    然後⋯有男友還偷偷愛看歐美帥哥的部分我們會記著的😉<br/>
-    台灣永遠等你回來，我們永遠等你。🌟
-    </p>
-<div class="audio-box">
-<div class="speaker">🎙️ 芊絨</div>
-<div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l5')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-<div class="speaker">🎙️ 詩芹</div>
-<div class="listening" id="l6">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l6')" preload="auto">
-<source src="https://cdn.pixabay.com/download/audio/2024/03/09/audio_56ae6a8db9.mp3?filename=soft-rain-outside-ambient-166379.mp3" type="audio/mpeg"/>
-</audio>
-</div>
-</div>
-<script>
-function showListening(id) {
-  document.querySelectorAll('.listening').forEach(el => el.style.display = 'none');
-  const el = document.getElementById(id);
-  if (el) el.style.display = 'block';
-}
-
-document.addEventListener('click', function(e) {
-  const flag = document.createElement("div");
-  flag.className = "flag-float";
-  flag.style.left = e.pageX + "px";
-  flag.style.top = e.pageY + "px";
-  flag.innerText = Math.random() > 0.5 ? "🇹🇼" : "🇹🇭";
-  document.body.appendChild(flag);
-  setTimeout(() => flag.remove(), 2000);
-});
-</script>
-<script>
-function showLightbox(src) {
-  const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.top = "0";
-  overlay.style.left = "0";
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
-  overlay.style.display = "flex";
-  overlay.style.justifyContent = "center";
-  overlay.style.alignItems = "center";
-  overlay.style.zIndex = "9999";
-  overlay.onclick = () => document.body.removeChild(overlay);
-  
-  const img = document.createElement("img");
-  img.src = src;
-  img.style.maxWidth = "90%";
-  img.style.maxHeight = "90%";
-  img.style.borderRadius = "16px";
-  overlay.appendChild(img);
-  
-  document.body.appendChild(overlay);
-}
-</script><script>
-document.querySelectorAll("audio").forEach(audio => {
-  audio.addEventListener("play", () => {
-    const boba = document.querySelector(".bubbletea");
-    boba.classList.add("boba-shake");
-    setTimeout(() => boba.classList.remove("boba-shake"), 600);
-  });
-});
-</script></body>
+  <a href="final_index_twstyle_title.html">
+    <img class="envelope" src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="點我打開信封" />
+  </a>
+  <div class="hint">📬 點擊信封，打開給你的信</div>
+</body>
 </html>
-<footer style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9em;">
-  本頁由 明宏Oscar 製作 ❤️
-</footer>
