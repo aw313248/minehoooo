@@ -81,10 +81,45 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.bottom-img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.bottom-img:hover {
+  transform: scale(1.05);
+}
+
+/* 漂浮珍奶背景 */
+.bubbletea {
+  position: fixed;
+  width: 60px;
+  bottom: 20px;
+  left: 10px;
+  z-index: -1;
+  animation: float-boba 6s ease-in-out infinite;
+  opacity: 0.6;
+}
+@keyframes float-boba {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shake-boba {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+.boba-shake {
+  animation: shake-boba 0.6s ease;
+}
 </style>
 </head>
 <body>
-<h1 style="color: #d86fa0;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
+<img class="bubbletea" src="https://cdn-icons-png.flaticon.com/512/3177/3177409.png"/><h1 style="color: #d86fa0;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
 <div class="audio-box">
 <p>🌊 背景音樂：放鬆的海浪聲（若未自動播放，請點播放）<br/></p>
 <audio autoplay="" controls="" id="bg-audio" loop="" preload="auto">
@@ -93,7 +128,7 @@
   </audio>
 </div>
 <div class="card">
-<img alt="四月出發插畫" class="bottom-img" src="four_months.png"/>
+<img alt="四月出發插畫" class="bottom-img" onclick="showLightbox(this.src)" src="four_months.png"/>
 <h2>🧭 四月出發：這段新旅程的開始</h2>
 <p>
 第一天到曼谷的時候，我們就想著你一定在機場✈️緊張兮兮又很期待吧～
@@ -105,18 +140,18 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l1">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l1')">
+<audio controls="" onplay="showListening('l1')" preload="auto">
 <source src="normalized_april_qianrong.mp3" type="audio/mpeg"/>
 </audio>
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l2">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l2')">
+<audio controls="" onplay="showListening('l2')" preload="auto">
 <source src="normalized_april_shiqin.mp3" type="audio/mpeg"/>
 </audio>
 </div>
 </div>
 <div class="card">
-<img alt="八月仲夏插畫" class="bottom-img" src="eight_months_tea.png"/>
+<img alt="八月仲夏插畫" class="bottom-img" onclick="showLightbox(this.src)" src="eight_months_tea.png"/>
 <h2>🫖 八月仲夏：生活穩定了嗎？</h2>
 <p>
 聽說你開始教書了！👩‍🏫 是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）😤🤏
@@ -128,12 +163,12 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l3')">
+<audio controls="" onplay="showListening('l3')" preload="auto">
 <source src="normalized_august_qianrong.mp3" type="audio/mpeg"/>
 </audio>
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l4">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l4')">
+<audio controls="" onplay="showListening('l4')" preload="auto">
 <source src="normalized_august_shiqin.mp3" type="audio/mpeg"/>
 </audio>
 </div>
@@ -150,12 +185,12 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
-<audio controls="" onplay="showListening('l5')">
+<audio controls="" onplay="showListening('l5')" preload="auto">
 <source src="normalized_march_qianrong.mp3" type="audio/mpeg"/>
 </audio>
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l6">🎵 正在聽詩芹說話中...</div>
-<audio controls="" onplay="showListening('l6')">
+<audio controls="" onplay="showListening('l6')" preload="auto">
 <source src="normalized_march_shiqin.mp3" type="audio/mpeg"/>
 </audio>
 </div>
@@ -177,7 +212,39 @@ document.addEventListener('click', function(e) {
   setTimeout(() => flag.remove(), 2000);
 });
 </script>
-</body>
+<script>
+function showLightbox(src) {
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
+  overlay.style.zIndex = "9999";
+  overlay.onclick = () => document.body.removeChild(overlay);
+  
+  const img = document.createElement("img");
+  img.src = src;
+  img.style.maxWidth = "90%";
+  img.style.maxHeight = "90%";
+  img.style.borderRadius = "16px";
+  overlay.appendChild(img);
+  
+  document.body.appendChild(overlay);
+}
+</script><script>
+document.querySelectorAll("audio").forEach(audio => {
+  audio.addEventListener("play", () => {
+    const boba = document.querySelector(".bubbletea");
+    boba.classList.add("boba-shake");
+    setTimeout(() => boba.classList.remove("boba-shake"), 600);
+  });
+});
+</script></body>
 </html>
 <footer style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9em;">
   本頁由 明宏Oscar 製作 ❤️
