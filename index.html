@@ -8,74 +8,46 @@
   <style>
     body {
       font-family: 'Noto Sans TC', sans-serif;
-      background: linear-gradient(to bottom, #ffffff, #f5f5ff);
+      background: #fff5ec;
       color: #333;
       padding: 20px;
+      position: relative;
       overflow-x: hidden;
     }
-    h1 {
-      color: #ff6666;
-      font-size: 2em;
-      margin-bottom: 10px;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
+    .card {
+      background-size: cover;
+      background-position: center;
+      border-radius: 18px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      background-repeat: no-repeat;
+      background-blend-mode: lighten;
+      backdrop-filter: brightness(90%) blur(1px);
     }
     h2 {
-      color: #4466cc;
-      margin-top: 30px;
+      background: rgba(255,255,255,0.7);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 12px;
     }
     p {
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-    .card {
-      background: rgba(255,255,255,0.8);
-      padding: 20px;
+      background: rgba(255,255,255,0.6);
+      padding: 12px;
       border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideUp 1s ease forwards;
     }
-    .card:nth-child(2) { animation-delay: 0.5s; }
-    .card:nth-child(3) { animation-delay: 1s; }
-    .card:nth-child(4) { animation-delay: 1.5s; }
-
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .float-heart {
+    /* 飄浮國旗 */
+    .flag-float {
       position: absolute;
-      font-size: 20px;
-      animation: float 2s ease-out forwards;
+      font-size: 24px;
+      animation: float-up 2s ease-out forwards;
       pointer-events: none;
     }
-
-    @keyframes float {
+    @keyframes float-up {
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(-100px); opacity: 0; }
     }
-
-    .listening {
-      font-size: 0.9em;
-      color: #cc4444;
-      margin-bottom: 10px;
-      font-style: italic;
+    audio {
       display: none;
     }
   </style>
@@ -84,54 +56,45 @@
 
 <h1>芊絨 & 詩芹：來自未來的我們 ✉️</h1>
 
-<div class="card">
+<audio id="bg-audio" autoplay loop>
+  <source src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Ocean_waves_on_beach.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="card" style="background-image: url('four_months.png');">
   <h2>🧭 四月出發：這段新旅程的開始</h2>
-  <p>台灣這兩天剛好轉晴，有點像是我們的祝福偷偷搭飛機跟你們去了。<br/>
-  如果你在路上聞到九層塔或聽到有人喊「欸欸幫我買豆漿」，那是幻覺，是我們的牽掛（誤）！<br/>
-  想問你們在清邁第一餐吃什麼？有沒有迷路？還是被帥哥搭話了？要拍照喔～台灣這邊會想你們的。</p>
-  <div class="listening" id="l1">正在聽芊絨說話中...</div>
-  <audio controls onplay="showListening('l1')"><source src="normalized_april_qianrong.mp3" type="audio/mpeg"></audio>
-  <div class="listening" id="l2">正在聽詩芹說話中...</div>
-  <audio controls onplay="showListening('l2')"><source src="normalized_april_shiqin.mp3" type="audio/mpeg"></audio>
+  <p>
+    第一天到曼谷的時候，我們就想著你一定在機場緊張兮兮又很期待吧～<br/>
+    好想知道你是不是一邊過海關一邊想著「我真的要來這裡一年嗎？」（笑）<br/>
+    我們那時候還賭你第一天會不會直接爆買零食，快回報啊老師小姐！
+  </p>
 </div>
 
-<div class="card">
+<div class="card" style="background-image: url('eight_months_tea.png');">
   <h2>🫖 八月仲夏：生活穩定了嗎？</h2>
-  <p>八月的台灣，熱到路人都在便利商店逗留一小時，應該說是一種「全民避暑文化」。<br/>
-  你們在那邊還好嗎？開始習慣教學節奏了嗎？如果哪天忽然想家了，就想像我們拿著珍奶坐在你對面說廢話吧。<br/>
-  還有還有，有沒有開始偷偷學泰文？聽說泰式奶茶很甜，但我們的友情比較甜（咳）。</p>
-  <div class="listening" id="l3">正在聽芊絨說話中...</div>
-  <audio controls onplay="showListening('l3')"><source src="normalized_august_qianrong.mp3" type="audio/mpeg"></audio>
-  <div class="listening" id="l4">正在聽詩芹說話中...</div>
-  <audio controls onplay="showListening('l4')"><source src="normalized_august_shiqin.mp3" type="audio/mpeg"></audio>
+  <p>
+    聽說你開始教書了！是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）<br/>
+    我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」？<br/>
+    還有還有，該不會交了男朋友沒說吧？有帥的同事請分享，感謝。
+  </p>
 </div>
 
-<div class="card">
+<div class="card" style="background-color: #f2f2f2;">
   <h2>🌅 三月歸期：倒數的風景</h2>
-  <p>清邁的最後一段路應該會特別捨不得吧，像每次回台南離開前總要再吃一次米糕。<br/>
-  我們真的好想再一起吃飯、散步、講垃圾話。到時你們回來，一定要有一場「感人到笑場」的回歸聚會喔！<br/>
-  如果你們在那邊交了男友，不准比我們好笑（開玩笑），但要記得把幸福也帶回來！</p>
-  <div class="listening" id="l5">正在聽芊絨說話中...</div>
-  <audio controls onplay="showListening('l5')"><source src="normalized_march_qianrong.mp3" type="audio/mpeg"></audio>
-  <div class="listening" id="l6">正在聽詩芹說話中...</div>
-  <audio controls onplay="showListening('l6')"><source src="normalized_march_shiqin.mp3" type="audio/mpeg"></audio>
+  <p>
+    （這段還沒插入圖片喔，我們等等再來拼上最後一塊拼圖！）
+  </p>
 </div>
 
 <script>
-function showListening(id) {
-  document.querySelectorAll('.listening').forEach(el => el.style.display = 'none');
-  const el = document.getElementById(id);
-  if (el) el.style.display = 'block';
-}
-
 document.addEventListener('click', function(e) {
-  const heart = document.createElement("div");
-  heart.className = "float-heart";
-  heart.style.left = e.pageX + "px";
-  heart.style.top = e.pageY + "px";
-  heart.innerText = Math.random() > 0.5 ? "💖" : "✉️";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 2000);
+  const flag = document.createElement("div");
+  flag.className = "flag-float";
+  flag.style.left = e.pageX + "px";
+  flag.style.top = e.pageY + "px";
+  flag.innerText = Math.random() > 0.5 ? "🇹🇼" : "🇹🇭";
+  document.body.appendChild(flag);
+  setTimeout(() => flag.remove(), 2000);
 });
 </script>
 
