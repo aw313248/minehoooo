@@ -191,18 +191,50 @@
       from { background-position: 0 0; }
       to { background-position: 0 1000px; }
     }
+    
+    body::before {
+      content: "";
+      background: url('https://cdn.pixabay.com/animation/2023/05/08/22/43/22-43-56-761_512.gif') repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.2;
+      z-index: -1;
+      animation: scrollBg 60s linear infinite;
+    }
+
+    @keyframes scrollBg {
+      from { background-position: 0 0; }
+      to { background-position: 0 1000px; }
+    }
+    
+    /* 手機與電腦版通用寬度控制 */
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .card, h1, h2, p, .time {
+      text-align: center;
+    }
+
+    @media screen and (min-width: 800px) {
+      body {
+        font-size: 17px;
+        line-height: 1.8;
+      }
+    }
     </style>
 </head>
-<body>
-<audio autoplay="" controls="" loop="" preload="auto" style="display: block; margin: 20px auto;">
+<body><audio autoplay="" loop="" preload="auto" style="display:none;">
 <source src="https://cdn.pixabay.com/download/audio/2023/09/27/audio_3530dd5e85.mp3?filename=ocean-waves-nature-sounds-relaxing-ambient-144008.mp3" type="audio/mpeg"/>
-  您的瀏覽器無法播放音樂。
-</audio>
+</audio><div class="container">
 
 <img class="sakura" src="https://cdn-icons-png.flaticon.com/512/7820/7820290.png" style="opacity: 0.2;"/><h1 style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Taiwan.svg/2560px-Flag_of_Taiwan.svg.png') no-repeat center center;background-size: cover;color: #ff2c91;padding: 20px;border-radius: 12px;opacity: 1;">芊絨 &amp; 詩芹：來自未來的我們 ✉️</h1>
 <div class="audio-box">
 <p>🌊 背景音樂：放鬆的海浪聲（若未自動播放，請點播放）<br/></p>
-
 </div>
 <div class="card">
 <img alt="四月出發插畫" class="bottom-img" onclick="showLightbox(this.src)" src="four_months.png"/>
@@ -219,10 +251,8 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l1">🎵 正在聽芊絨說話中...</div>
-
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l2">🎵 正在聽詩芹說話中...</div>
-
 </div>
 </div>
 <div class="card">
@@ -240,10 +270,8 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
-
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l4">🎵 正在聽詩芹說話中...</div>
-
 </div>
 </div>
 <div class="card" style="background-color: #f2f2f2;">
@@ -260,10 +288,8 @@
 <div class="audio-box">
 <div class="speaker">🎙️ 芊絨</div>
 <div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
-
 <div class="speaker">🎙️ 詩芹</div>
 <div class="listening" id="l6">🎵 正在聽詩芹說話中...</div>
-
 </div>
 <img src="march_final_art.png" style="max-width: 100%; border-radius: 12px; margin-top: 20px;"/></div>
 <script>
@@ -315,7 +341,7 @@ document.querySelectorAll("audio").forEach(audio => {
     setTimeout(() => boba.classList.remove("boba-shake"), 600);
   });
 });
-</script></body>
+</script></div></body>
 </html>
 <footer style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9em;">
   本頁由 明宏Oscar 製作 ❤️
