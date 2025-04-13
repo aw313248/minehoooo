@@ -57,7 +57,7 @@
       color: #f1f1f1;
     }
     audio {
-      margin-top: 20px;
+      margin-top: 10px;
       width: 100%;
     }
     .cassette-player {
@@ -93,39 +93,15 @@
   <h1>芊絨 & 詩芹：來自未來的我們 ✉️</h1>
   <div class="time" id="timeDisplay">Loading times...</div>
 
-  <div class="card">
-    <h2>🧭 四月出發：這段新旅程的開始</h2>
-    <p>
-      台灣這兩天剛好轉晴，有點像是我們的祝福偷偷搭飛機跟你們去了。<br/>
-      如果你在路上聞到九層塔或聽到有人喊「欸欸幫我買豆漿」，那是幻覺，是我們的牽掛（誤）！<br/>
-      想問你們在清邁第一餐吃什麼？有沒有迷路？還是被帥哥搭話了？要拍照喔～台灣這邊會想你們的。
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>🫖 八月仲夏：生活穩定了嗎？</h2>
-    <p>
-      八月的台灣，熱到路人都在便利商店逗留一小時，應該說是一種「全民避暑文化」。<br/>
-      你們在那邊還好嗎？開始習慣教學節奏了嗎？如果哪天忽然想家了，就想像我們拿著珍奶坐在你對面說廢話吧。<br/>
-      還有還有，有沒有開始偷偷學泰文？聽說泰式奶茶很甜，但我們的友情比較甜（咳）。
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>🌅 三月歸期：倒數的風景</h2>
-    <p>
-      清邁的最後一段路應該會特別捨不得吧，像每次回台南離開前總要再吃一次米糕。<br/>
-      我們真的好想再一起吃飯、散步、講垃圾話。到時你們回來，一定要有一場「感人到笑場」的回歸聚會喔！<br/>
-      如果你們在那邊交了男友，不准比我們好笑（開玩笑），但要記得把幸福也帶回來！
-    </p>
-  </div>
+  <div class="card" id="aprilCard"></div>
+  <div class="card" id="augustCard"></div>
+  <div class="card" id="marchCard"></div>
 
   <audio controls autoplay loop>
     <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e3/Lofi_song_-_Vishmak_%26_Nitesh_Chhabra_%28Jamendo%29.ogg/Lofi_song_-_Vishmak_%26_Nitesh_Chhabra_%28Jamendo%29.ogg.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 </div>
-
 <!-- 錄音帶播放器 -->
 <div class="cassette-player">
   <img src="https://cdn-icons-png.flaticon.com/512/743/743924.png" alt="cassette" class="cassette-icon" id="cassette-icon">
@@ -144,6 +120,51 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+function showOrLock(cardId, unlockDate, title, contentHTML) {
+  const now = new Date();
+  const unlock = new Date(unlockDate);
+  const card = document.getElementById(cardId);
+  if (now >= unlock) {
+    card.innerHTML = `<h2>${title}</h2>${contentHTML}`;
+  } else {
+    const messages = [
+      "🔒 嘿～這段回憶還在時光機排隊中！等一下再來偷看嘿 😘",
+      "🔒 噓～這篇故事還在悄悄準備中，到時候會閃亮登場 🌟"
+    ];
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    card.innerHTML = `<h2>${title}</h2><p>${msg}</p>`;
+  }
+}
+showOrLock("aprilCard", "2025-04-16", "🧭 四月出發：這段新旅程的開始", `
+<p>台灣這兩天剛好轉晴，有點像是我們的祝福偷偷搭飛機跟你們去了。<br/>
+如果你在路上聞到九層塔或聽到有人喊「欸欸幫我買豆漿」，那是幻覺，是我們的牽掛（誤）！<br/>
+想問你們在清邁第一餐吃什麼？有沒有迷路？還是被帥哥搭話了？要拍照喔～台灣這邊會想你們的。</p>
+<p><strong>🎧 芊絨的語音：</strong></p>
+<audio controls><source src="芊絨 第一天落地🇹🇭.m4a" type="audio/mp4"></audio>
+<p><strong>🎧 詩芹的語音：</strong></p>
+<audio controls><source src="芹1.m4a" type="audio/mp4"></audio>
+`);
+
+showOrLock("augustCard", "2025-10-10", "🫖 八月仲夏：生活穩定了嗎？", `
+<p>八月的台灣，熱到路人都在便利商店逗留一小時，應該說是一種「全民避暑文化」。<br/>
+你們在那邊還好嗎？開始習慣教學節奏了嗎？如果哪天忽然想家了，就想像我們拿著珍奶坐在你對面說廢話吧。<br/>
+還有還有，有沒有開始偷偷學泰文？聽說泰式奶茶很甜，但我們的友情比較甜（咳）。</p>
+<p><strong>🎧 芊絨的語音：</strong></p>
+<audio controls><source src="芊絨 泰國度過一半的日子.m4a" type="audio/mp4"></audio>
+<p><strong>🎧 詩芹的語音：</strong></p>
+<audio controls><source src="芹2.m4a" type="audio/mp4"></audio>
+`);
+
+showOrLock("marchCard", "2026-03-05", "🌅 三月歸期：倒數的風景", `
+<p>清邁的最後一段路應該會特別捨不得吧，像每次回台南離開前總要再吃一次米糕。<br/>
+我們真的好想再一起吃飯、散步、講垃圾話。到時你們回來，一定要有一場「感人到笑場」的回歸聚會喔！<br/>
+如果你們在那邊交了男友，不准比我們好笑（開玩笑），但要記得把幸福也帶回來！</p>
+<p><strong>🎧 芊絨的語音：</strong></p>
+<audio controls><source src="芊絨 泰國一年啦.m4a" type="audio/mp4"></audio>
+<p><strong>🎧 詩芹的語音：</strong></p>
+<audio controls><source src="芹3.m4a" type="audio/mp4"></audio>
+`);
 </script>
 
 </body>
