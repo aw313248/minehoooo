@@ -35,8 +35,9 @@
       background: rgba(255,255,255,0.6);
       padding: 12px;
       border-radius: 12px;
+      line-height: 1.8;
+      white-space: pre-line;
     }
-    /* 飄浮國旗 */
     .flag-float {
       position: absolute;
       font-size: 24px;
@@ -47,7 +48,18 @@
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(-100px); opacity: 0; }
     }
-    audio {
+    .audio-box {
+      margin-bottom: 20px;
+    }
+    .speaker {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .listening {
+      font-size: 0.9em;
+      color: #d06;
+      font-style: italic;
+      margin-top: 4px;
       display: none;
     }
   </style>
@@ -56,37 +68,86 @@
 
 <h1>芊絨 & 詩芹：來自未來的我們 ✉️</h1>
 
-<audio id="bg-audio" autoplay loop>
-  <source src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Ocean_waves_on_beach.ogg" type="audio/ogg">
-  Your browser does not support the audio element.
-</audio>
+<div class="audio-box">
+  <p>🌊 背景音樂：放鬆的海浪聲（若未自動播放，請點播放）</p>
+  <audio id="bg-audio" autoplay loop preload="auto" controls>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Ocean_waves_on_beach.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 
 <div class="card" style="background-image: url('four_months.png');">
   <h2>🧭 四月出發：這段新旅程的開始</h2>
   <p>
-    第一天到曼谷的時候，我們就想著你一定在機場緊張兮兮又很期待吧～<br/>
-    好想知道你是不是一邊過海關一邊想著「我真的要來這裡一年嗎？」（笑）<br/>
-    我們那時候還賭你第一天會不會直接爆買零食，快回報啊老師小姐！
+第一天到曼谷的時候，我們就想著你一定在機場緊張兮兮又很期待吧～
+
+好想知道你是不是一邊過海關一邊想著「我真的要來這裡一年嗎？」（笑）
+
+我們那時候還賭你第一天會不會直接爆買零食，快回報啊老師小姐！
   </p>
+  <div class="audio-box">
+    <div class="speaker">🎙️ 芊絨</div>
+    <div class="listening" id="l1">🎵 正在聽芊絨說話中...</div>
+    <audio controls onplay="showListening('l1')">
+      <source src="normalized_april_qianrong.mp3" type="audio/mpeg">
+    </audio>
+    <div class="speaker">🎙️ 詩芹</div>
+    <div class="listening" id="l2">🎵 正在聽詩芹說話中...</div>
+    <audio controls onplay="showListening('l2')">
+      <source src="normalized_april_shiqin.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
 <div class="card" style="background-image: url('eight_months_tea.png');">
   <h2>🫖 八月仲夏：生活穩定了嗎？</h2>
   <p>
-    聽說你開始教書了！是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）<br/>
-    我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」？<br/>
-    還有還有，該不會交了男朋友沒說吧？有帥的同事請分享，感謝。
+聽說你開始教書了！是不是有些可愛又爆氣的小學生？有沒有讓你忍不住想罵人（但還是忍住XD）
+
+我們很好奇你怎麼罵人的，是中英泰混合嗎？還是直接「唉呀算了～太可愛了」？
+
+還有還有，該不會交了男朋友沒說吧？有帥的同事請分享，感謝。
   </p>
+  <div class="audio-box">
+    <div class="speaker">🎙️ 芊絨</div>
+    <div class="listening" id="l3">🎵 正在聽芊絨說話中...</div>
+    <audio controls onplay="showListening('l3')">
+      <source src="normalized_august_qianrong.mp3" type="audio/mpeg">
+    </audio>
+    <div class="speaker">🎙️ 詩芹</div>
+    <div class="listening" id="l4">🎵 正在聽詩芹說話中...</div>
+    <audio controls onplay="showListening('l4')">
+      <source src="normalized_august_shiqin.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
-<div class="card" style="background-color: #f2f2f2;">
+<div class="card" style="background-image: url('march_suitcase.png');">
   <h2>🌅 三月歸期：倒數的風景</h2>
   <p>
-    （這段還沒插入圖片喔，我們等等再來拼上最後一塊拼圖！）
+（這段還沒插入圖片喔，我們等等再來拼上最後一塊拼圖！）
   </p>
+  <div class="audio-box">
+    <div class="speaker">🎙️ 芊絨</div>
+    <div class="listening" id="l5">🎵 正在聽芊絨說話中...</div>
+    <audio controls onplay="showListening('l5')">
+      <source src="normalized_march_qianrong.mp3" type="audio/mpeg">
+    </audio>
+    <div class="speaker">🎙️ 詩芹</div>
+    <div class="listening" id="l6">🎵 正在聽詩芹說話中...</div>
+    <audio controls onplay="showListening('l6')">
+      <source src="normalized_march_shiqin.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
 <script>
+function showListening(id) {
+  document.querySelectorAll('.listening').forEach(el => el.style.display = 'none');
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'block';
+}
+
 document.addEventListener('click', function(e) {
   const flag = document.createElement("div");
   flag.className = "flag-float";
